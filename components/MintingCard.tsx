@@ -68,14 +68,14 @@ const MintingCard: NextPage = () => {
   return (
     <>
       {/* <Container> */}
-      <div className="bg-[#23102C]">
+      <div className="bg-[#23102C] pt-8">
         <div
           className=" flex flex-col gap-y-6 text-center
       font-['Caveat'] text-white"
         >
           <h1 className="text-5xl">Benefactor</h1>
-          <span className="text-5xl">
-            {data.totalSupply} / {config.MAX_SUPPLY} remaining
+          <span className="text-2xl md:text-4xl">
+            {data.totalSupply} / {config.MAX_SUPPLY} Remaining
           </span>
           <div className="text-1xl font-sans">
             <p>
@@ -83,7 +83,7 @@ const MintingCard: NextPage = () => {
             </p>
             <p>* $60 to mint *</p>{' '}
             <p>Only $35 in USD or ETH when using a mint pass</p>
-            <button className="my-10">
+            <button className="my-10 mx-auto hidden md:flex">
               <Image
                 src={'/images/mintButton.png'}
                 width="270"
@@ -91,15 +91,35 @@ const MintingCard: NextPage = () => {
                 alt="Mint benefator"
               />
             </button>
+            <div className="md:hidden">
+              <button className="mt-10">
+                <Image
+                  src={'/images/mintButton.png'}
+                  width="149"
+                  height="40"
+                  alt="Mint benefator"
+                />
+              </button>
+            </div>
             <p>using credit card or ETH</p>
           </div>
           <Container>
-            <Image
-              src="/images/Preview.png"
-              alt="Preview"
-              width="1362"
-              height="318"
-            />
+            <div className="mx-auto hidden md:flex">
+              <Image
+                src="/images/Preview.png"
+                alt="Preview"
+                width="1362"
+                height="318"
+              />
+            </div>
+            <div className="mx-auto md:hidden">
+              <Image
+                src="/images/PreviewMobile.png"
+                alt="Preview"
+                width="350"
+                height="230"
+              />
+            </div>
           </Container>
         </div>
 
@@ -108,14 +128,14 @@ const MintingCard: NextPage = () => {
       text-center font-['Caveat'] text-white"
         >
           <h1 className="text-5xl">Patron</h1>
-          <span className="text-5xl">
-            {data.totalSupply} / {config.MAX_SUPPLY} remaining
+          <span className="text-2xl md:text-4xl">
+            {data.totalSupply} / {config.MAX_SUPPLY} Remaining
           </span>
           <div className="text-1xl font-sans">
             <p>Community Membership * Patron Role in Community</p>
             <p>* $30 to mint *</p>{' '}
             <p>Only $35 in USD or ETH when using a mint pass</p>
-            <button className="my-10">
+            <button className="my-10 mx-auto hidden md:flex">
               <Image
                 src={'/images/mintButton.png'}
                 width="270"
@@ -123,15 +143,35 @@ const MintingCard: NextPage = () => {
                 alt="Mint benefator"
               />
             </button>
+            <div className="md:hidden">
+              <button className="mt-10">
+                <Image
+                  src={'/images/mintButton.png'}
+                  width="149"
+                  height="40"
+                  alt="Mint benefator"
+                />
+              </button>
+            </div>
             <p>using credit card or ETH</p>
           </div>
           <Container>
-            <Image
-              src="/images/Preview2.png"
-              alt="Preview"
-              width="1362"
-              height="318"
-            />
+            <div className="mx-auto hidden md:flex">
+              <Image
+                src="/images/Preview2.png"
+                alt="Preview"
+                width="1362"
+                height="318"
+              />
+            </div>
+            <div className="mx-auto md:hidden">
+              <Image
+                src="/images/PreviewMobile2.png"
+                alt="Preview"
+                width="350"
+                height="165"
+              />
+            </div>
           </Container>
         </div>
         <div className="bg-white">
