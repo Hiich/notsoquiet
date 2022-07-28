@@ -44,23 +44,30 @@ const Hero: NextPage = () => {
           </div>
         </div>
         {/* Mobile section */}
-        <div className="flex flex-col justify-center bg-[#23102C] text-center md:hidden">
-          <Container>
-            <div className='mt-10'>
-              <Image
-                src="/images/Logo.png"
-                alt={'logo'}
-                width="250"
-                height="60"
-              />
-            </div>
+        <div
+          className="flex flex-col justify-center bg-[#23102C]
+         text-center md:hidden"
+        >
+          <div className="bg-hero bg-cover bg-no-repeat mb-4">
+            <Container>
+              <div className="mt-10">
+                <Image
+                  src="/images/Logo.png"
+                  alt={'logo'}
+                  width="250"
+                  height="60"
+                />
+              </div>
 
-            <div className="my-8 font-['Caveat'] text-2xl text-white">
-              <p>Leveraging web3</p> <p>to</p>
-              <p>Alleviate period poverty</p>
-              <p>Educate and Empower</p>
-              <p>Build community</p>
-            </div>
+              <div className="my-8 font-['Caveat'] text-2xl text-white">
+                <p>Leveraging web3</p> <p>to</p>
+                <p>Alleviate period poverty</p>
+                <p>Educate and Empower</p>
+                <p>Build community</p>
+              </div>
+            </Container>
+          </div>
+          <Container>
             <Image
               src="/images/MinatureMobile.png"
               alt={'logo'}

@@ -18,6 +18,9 @@ module.exports = {
       dropShadow: {
         '2xl': '0 4.9732px 4.9732px rgba(0, 0, 0, 0.25)',
       },
+      backgroundImage: {
+        hero: "url('/images/BannerTransparent.png')"
+      }
     },
   },
   plugins: [],
