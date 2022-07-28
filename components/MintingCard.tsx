@@ -104,8 +104,8 @@ const MintingCard: NextPage = () => {
         </div>
 
         <div
-          className=" flex flex-col gap-y-6  text-center
-      font-['Caveat'] text-white mt-10"
+          className=" my-10 mb-20 flex flex-col  gap-y-6
+      text-center font-['Caveat'] text-white"
         >
           <h1 className="text-5xl">Patron</h1>
           <span className="text-5xl">
@@ -133,6 +133,9 @@ const MintingCard: NextPage = () => {
               height="318"
             />
           </Container>
+        </div>
+        <div className="bg-white">
+          <p className="text-center text-black">copyright@Notsoquiet</p>
         </div>
       </div>
       {/* </Container> */}
