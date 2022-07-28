@@ -1,0 +1,14 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+/* @import url("https://fonts.googleapis.com/css?family=Work+Sans:700,600|Baloo+2:400"); */
+
+@font-face {
+  font-family: 'CaveatBold';
+  src: url('/fonts/Caveat-Bold.ttf');
+}
+
+@font-face {
+  font-family: 'Caveat';
+  src: url('/fonts/Caveat-Regular.ttf');
+}
