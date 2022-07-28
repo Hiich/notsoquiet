@@ -124,7 +124,7 @@ const MintingCard: NextPage = () => {
         </div>
 
         <div
-          className=" my-10 mb-20 flex flex-col  gap-y-6
+          className="md:my-10 mb-20 flex flex-col  gap-y-6
       text-center font-['Caveat'] text-white"
         >
           <h1 className="text-5xl">Patron</h1>
