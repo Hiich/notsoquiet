@@ -62,6 +62,8 @@ export const connect = () => {
             abi,
             config.CONTRACT_ADDRESS
           )
+          SmartContractObj.options.address = config.SMART_CONTRACT
+
           dispatch(
             connectSuccess({
               account: accounts[0],
@@ -85,6 +87,51 @@ export const connect = () => {
       }
     } else {
       dispatch(connectFailed('Install Metamask.'))
+    }
+  }
+}
+
+export const setContract = () => {
+  return async (dispatch) => {
+    console.log('Initializing contract')
+    dispatch(connectRequest())
+    const abiResponse = await fetch('/config/abi.json', {
+      headers: {
+        'Content-Type': 'application/json',
+        Accept: 'application/json',
+      },
+    })
+    const abi = await abiResponse.json()
+
+    const { ethereum } = window
+
+    Web3EthContract.setProvider(ethereum)
+    let web3 = new Web3(ethereum)
+    try {
+      const networkId = await ethereum.request({
+        method: 'net_version',
+      })
+      if (networkId == config.NETWORK.ID) {
+        const SmartContractObj = new Web3EthContract(
+          abi,
+          config.CONTRACT_ADDRESS
+        )
+        SmartContractObj.options.address = config.SMART_CONTRACT
+        dispatch(fetchData())
+        dispatch(
+          connectSuccess({
+            account: null,
+            smartContract: SmartContractObj,
+            web3: web3,
+          })
+        )
+        console.log(SmartContractObj)
+        // Add listeners end
+      } else {
+        dispatch(connectFailed(`Change network to ${config.NETWORK.NAME}.`))
+      }
+    } catch (err) {
+      dispatch(connectFailed('Something went wrong.'))
     }
   }
 }

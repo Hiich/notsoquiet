@@ -22,18 +22,25 @@ const fetchDataFailed = (payload) => {
 }
 
 export const fetchData = () => {
+  console.log('fetching data...')
   return async (dispatch) => {
     dispatch(fetchDataRequest())
     try {
-      let totalSupply = await store
+      let patronSupply = await store
         .getState()
-        .blockchain.smartContract.methods.totalSupply()
+        .blockchain.smartContract.methods.lastTokenId(2)
         .call()
+      let benefactorMinted = await store
+        .getState()
+        .blockchain.smartContract.methods.lastTokenId(1)
+        .call()
+      let benefactorSupply = benefactorMinted - 8400
 
-      console.log(totalSupply)
+      console.log('Supply', benefactorSupply)
       dispatch(
         fetchDataSuccess({
-          totalSupply,
+          benefactorSupply,
+          patronSupply,
         })
       )
     } catch (err) {
